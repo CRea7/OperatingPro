@@ -64,6 +64,16 @@ module Api
           render json: {status: 'ERROR', message: 'Procedure not updated', data:procedure},status: :ok
         end
       end
+
+      def archive
+        procedure = Procedure.find(params[:id])
+
+        if procedure.update_attribute('status','archive')
+          render json: {status: 'SUCCESS', message: 'procedure Updated', data:procedure},status: :ok
+        else
+          render json: {status: 'ERROR', message: 'Procedure not updated', data:procedure},status: :ok
+        end
+      end
       private
 
       def procedure_params
