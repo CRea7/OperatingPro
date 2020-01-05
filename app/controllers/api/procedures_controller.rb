@@ -35,7 +35,7 @@ module Api
         end
       end
 
-      def updatepro
+      def current
         procedure = Procedure.find(params[:id])
 
         if procedure.update_attribute('status','current')
@@ -45,10 +45,29 @@ module Api
         end
       end
 
+      def awaiting
+        procedure = Procedure.find(params[:id])
+
+        if procedure.update_attribute('status','awaiting approval')
+          render json: {status: 'SUCCESS', message: 'procedure Updated', data:procedure},status: :ok
+        else
+          render json: {status: 'ERROR', message: 'Procedure not updated', data:procedure},status: :ok
+        end
+      end
+
+      def draft
+        procedure = Procedure.find(params[:id])
+
+        if procedure.update_attribute('status','draft')
+          render json: {status: 'SUCCESS', message: 'procedure Updated', data:procedure},status: :ok
+        else
+          render json: {status: 'ERROR', message: 'Procedure not updated', data:procedure},status: :ok
+        end
+      end
       private
 
       def procedure_params
-        params.permit(:title, :revnum)
+        params.permit(:title, :revnum, :status)
       end
   end
 end
