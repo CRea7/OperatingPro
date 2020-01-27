@@ -77,7 +77,7 @@ module Api
       private
 
       def procedure_params
-        params.permit(:title, :revnum, :status)
+        params.permit(:title, :revnum, :status ,:department, :content)
       end
   end
 end
