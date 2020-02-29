@@ -11,7 +11,7 @@ gem 'rails', '~> 5.1.6'
 
 gem 'rack-cors'
 gem 'mysql2', '~> 0.3.13'
-gem 'puma', '~> 3.7'
+gem 'puma', '~> 3.12'
 gem "sprockets", (RUBY_VERSION < "2.5" ? "< 4.0.0" : ">= 4.0.0")
 
 group :development, :test do
