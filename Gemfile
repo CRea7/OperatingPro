@@ -9,8 +9,6 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
-gem 'devise'
-gem 'knock'
 gem 'mysql2', '~> 0.4.4'
 gem 'puma', '~> 3.7'
 gem 'rack-cors'
