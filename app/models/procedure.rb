@@ -4,4 +4,5 @@ class Procedure < ApplicationRecord
   validates :status, presence: true
   validates :department, presence: true
   validates :content, presence: true
+  validates :creator, presence: true
 end
