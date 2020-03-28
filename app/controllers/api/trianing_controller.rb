@@ -39,7 +39,7 @@ module Api
     end
 
     def trianing_params
-      params.permit(:email, :procedure, :status)
+      params.permit(:email, :procedure, :status , :proid)
     end
   end
 end
