@@ -31,7 +31,7 @@ module Api
     def complete
       trianing = Trianing.find(params[:id])
 
-      if procedure.update_attribute('status','complete')
+      if trianing.update_attribute('status','Complete')
         render json: {status: 'SUCCESS', message: 'training Updated', data:trianing},status: :ok
       else
         render json: {status: 'ERROR', message: 'training not updated', data:trianing},status: :ok
