@@ -7,6 +7,10 @@ module Api
       render json: {status: 'SUCCESS', message: 'Loaded training', data:trianing},status: :ok
     end
 
+    def show
+      trianing = Trianing.find(params[:id])
+      render json: {status: 'SUCCESS', message: 'Loaded training', data:trianing},status: :ok
+    end
 
     def create
       trianing = Trianing.new(trianing_params)
