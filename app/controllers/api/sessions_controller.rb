@@ -1,6 +1,11 @@
 class Api::SessionsController < ApplicationController
   include CurrentUserConcern
 
+  def index
+    user = User.order('created_at DESC')
+    render json: {status: 'SUCCESS', message: 'Loaded Users', data:user},status: :ok
+  end
+
   def create
     user = User.find_by(email: params['email'])
                .try(:authenticate, params['password'])

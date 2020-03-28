@@ -2,7 +2,7 @@ module Api
     class ProceduresController < ApplicationController
 
       def index
-        procedures = Procedure.order('created_at DESC');
+        procedures = Procedure.order('created_at DESC')
         render json: {status: 'SUCCESS', message: 'Loaded Procedures', data:procedures},status: :ok
       end
 
