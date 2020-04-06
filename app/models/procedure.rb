@@ -5,4 +5,5 @@ class Procedure < ApplicationRecord
   validates :department, presence: true
   validates :content, presence: true
   validates :creator, presence: true
+  has_one_attached :file
 end
