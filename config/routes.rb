@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
     resources :procedures do
 
+      get 'filename', on: :member
       put 'current', on: :member
       put 'awaiting', on: :member
       put 'draft', on: :member
